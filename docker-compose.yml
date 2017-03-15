@@ -1,7 +1,7 @@
 version: '2'
 services:
   vault:
-    image: hashicorp/vault:0.6
+    image: vault:0.6
     command: vault server
     cap_add:
       - IPC_LOCK
