@@ -1,0 +1,17 @@
+version: '2'
+services:
+  vault:
+    image: hashicorp/vault:0.6
+    command: vault server
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - ./config:/vault/config
+    networks:
+      - vault
+      - consul
+networks:
+  vault:
+    external: true
+  consul:
+    external: true
